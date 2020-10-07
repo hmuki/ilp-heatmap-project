@@ -25,6 +25,49 @@
     <groupId>com.mapbox.mapboxsdk</groupId>
     <artifactId>mapbox-sdk-geojson</artifactId>
     <version>5.5.0</version>
-</dependency>
+	</dependency>
   </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>3.8.1</version>
+  			<configuration>
+  				<release>11</release>
+  				<showWarnings>true</showWarnings>
+  				<compilerArgs>
+  					<arg>-Xlint:all,-classfile</arg>
+  				</compilerArgs>
+  			</configuration>
+  		</plugin>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-jar-plugin</artifactId>
+  			<version>3.2.0</version>
+  			<configuration>
+  				<archive>
+  					<index>true</index>
+  					<manifest>
+  						<mainClass>uk.ac.ed.inf.heatmap.App</mainClass>
+  					</manifest>
+  				</archive>
+  			</configuration>
+  		</plugin>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-shade-plugin</artifactId>
+  			<version>3.2.4</version>
+  			<executions>
+  				<execution>
+  					<phase>package</phase>
+  					<goals>
+  						<goal>shade</goal>
+  					</goals>
+  				</execution>
+  			</executions>
+  		</plugin>
+  	</plugins>
+  </build>
 </project>
