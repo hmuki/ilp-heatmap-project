@@ -1,3 +1,3 @@
 ### Informatics Large Practical HeatMap Solution
 
-A java solution for the first coursework of my third year ILP course
+A java solution for ILP coursework 1
